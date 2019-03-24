@@ -1,7 +1,7 @@
 '''
 Created on Mar 23, 2019
 
-@author: red5-nasir
+@author: nasir uddin
 '''
 import nltk.classify.util
 from nltk.classify import NaiveBayesClassifier
