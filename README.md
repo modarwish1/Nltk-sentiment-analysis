@@ -90,4 +90,16 @@ nltk.download(&#39;stopwords&#39;)</p>
 
 <p style="text-align:justify">&nbsp;</p>
 
+<h2>Converting Text to Numbers</h2>
+
+<p>Machines, unlike humans, cannot understand the raw text. Machines can only see numbers. Particularly, statistical techniques such as machine learning can only deal with numbers. Therefore, we need to convert our text into numbers.</p>
+
+<p>You can directly convert text documents into TFIDF feature values (without first converting documents to bag of words features) using the following script:</p>
+
+<p>from sklearn.feature_extraction.text import TfidfVectorizer</p>
+
+<p>tfidfconverter = TfidfVectorizer(max_features=2000,stop_words=stopwords.words(&#39;english&#39;))<br />
+X = tfidfconverter.fit_transform(documents).toarray() &nbsp;</p>
+
+<p>&nbsp;</p>
 
