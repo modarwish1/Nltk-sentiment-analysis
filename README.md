@@ -31,6 +31,13 @@ from sklearn.metrics import classification_report, confusion_matrix, accuracy_sc
 import pickle &nbsp;<br />
 from nltk.corpus import stopwords &nbsp;</p>
 
+<h2>Importing the Dataset</h2>
+
+<p>Execute the following script to see&nbsp;<code>load_files</code>&nbsp;function in action:</p>
+
+<p>movie_data = load_files(r&quot;D:\txt_sentoken&quot;)</p>
+
+<p>X, y = movie_data.data, movie_data.target</p>
 <p>In the script above, the&nbsp;<code>load_files</code>&nbsp;function loads the data from both &quot;neg&quot; and &quot;pos&quot; folders into the&nbsp;<code>X</code>&nbsp;variable, while the target categories are stored in&nbsp;<code>y</code>. Here&nbsp;<code>X</code>&nbsp;is a list of 2000 string type elements where each element corresponds to single user review. Similarly,&nbsp;<code>y</code>&nbsp;is a numpy array of size 2000. If you print&nbsp;<code>y</code>&nbsp;on the screen, you will see an array of 1s and 0s. This is because, for each category, the&nbsp;<code>load_files</code>&nbsp;function adds a number to the target numpy array. We have two categories: &quot;neg&quot; and &quot;pos&quot;, therefore 1s and 0s have been added to the target array.</p>
 
 <p>&nbsp;</p>
