@@ -78,3 +78,16 @@ nltk.download(&#39;stopwords&#39;)</p>
 
 <p>&nbsp; &nbsp; documents.append(document)</p>
 
+<p style="text-align:justify">In the script above we use&nbsp;<a href="https://stackabuse.com/using-regex-for-text-manipulation-in-python/" target="_blank">Regex Expressions from Python re library</a>&nbsp;to perform different preprocessing tasks. We start by removing all non-word characters such as special characters, numbers, etc.</p>
+
+<p style="text-align:justify">Next, we remove all the single characters. For instance, when we remove the punctuation mark from &quot;David&#39;s&quot; and replace it with a space, we get &quot;David&quot; and a single character &quot;s&quot;, which has no meaning. To remove such single characters we use&nbsp;<code>\s+[a-zA-Z]\s+</code>&nbsp;regular expression which substitutes all the single characters having spaces on either side, with a single space.</p>
+
+<p style="text-align:justify">Next, we use the&nbsp;<code>\^[a-zA-Z]\s+</code>&nbsp;regular expression to replace a single character from the beginning of the document, with a single space. Replacing single characters with a single space may result in multiple spaces, which is not ideal.</p>
+
+<p style="text-align:justify">We again use the regular expression&nbsp;<code>\s+</code>&nbsp;to replace one or more spaces with a single space. When you have a dataset in bytes format, the alphabet letter &quot;b&quot; is appended before every string. The regex&nbsp;<code>^b\s+</code>&nbsp;removes &quot;b&quot; from the start of a string. The next step is to convert the data to lower case so that the words that are actually the same but have different cases can be treated equally.</p>
+
+<p style="text-align:justify">The final preprocessing step is the&nbsp;<a href="https://en.wikipedia.org/wiki/Tf%E2%80%93idf" rel="nofollow" target="_blank">lemmatization</a>. In lemmatization, we reduce the word into dictionary root form. For instance &quot;cats&quot; is converted into &quot;cat&quot;. Lemmatization is done in order to avoid creating features that are semantically similar but syntactically different. For instance, we don&#39;t want two different features named &quot;cats&quot; and &quot;cat&quot;, which are semantically similar, therefore we perform lemmatization.</p>
+
+<p style="text-align:justify">&nbsp;</p>
+
+
