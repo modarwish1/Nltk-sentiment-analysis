@@ -122,7 +122,9 @@ Finally, to predict the sentiment for the documents in our test set we can use t
 <p>y_pred = gnb.predict(X_test)</p>
 
 <h2>Evaluating the Model:</h2>
+<p>To evaluate the performance of a classification model such as the one that we just trained&nbsp;we can use accuracy score.for calculating accuracy score run the following script:&nbsp;</p>
 
-<p>&nbsp;</p>
+<p>print(&quot;the accuracy level is &quot;,accuracy_score(y_test, y_pred)) &nbsp;</p>
+
 
 
