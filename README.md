@@ -103,3 +103,26 @@ X = tfidfconverter.fit_transform(documents).toarray() &nbsp;</p>
 
 <p>&nbsp;</p>
 
+<h2>Training and Testing Sets</h2>
+
+<p>Like any other supervised machine learning problem, we need to divide our data into training and testing sets. To do so, we will use the&nbsp;<code>train_test_split</code>&nbsp;utility from the&nbsp;<code>sklearn.model_selection</code>library. Execute the following script:</p>
+
+<p>X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=0)</p>
+
+<p>The above script divides data into 20% test set and 80% training set.</p>
+
+<h2>Training Text Classification Model and Predicting Sentiment</h2>
+
+<p>We have divided our data into training and testing set. Now is the time to see the real action. We will use the&nbsp;Naive Bayes to train our model.To train our machine learning model using the Naive Bayes algorithm we will use&nbsp;<code>GaussianNB</code>&nbsp;class from the&nbsp;<code>sklearn.naive_bayes</code>&nbsp;library. The&nbsp;<code>fit</code>&nbsp;method of this class is used to train the algorithm. We need to pass the training data and training target sets to this method. Take a look at the following script:</p>
+
+<p>gnb = GaussianNB()<br />
+gnb.fit(X_train, y_train)<br />
+Finally, to predict the sentiment for the documents in our test set we can use the&nbsp;<code>predict</code>&nbsp;method of the&nbsp;GaussianNB&nbsp;class as shown below:</p>
+
+<p>y_pred = gnb.predict(X_test)</p>
+
+<h2>Evaluating the Model:</h2>
+
+<p>&nbsp;</p>
+
+
