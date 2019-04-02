@@ -57,7 +57,7 @@ for sen in range(0, len(X)):
     
     # convert text documents into TFIDF feature values
      
-tfidfconverter = TfidfVectorizer(max_features=2000)
+tfidfconverter = TfidfVectorizer(max_features=2000,stop_words=stopwords.words('english'))
 X = tfidfconverter.fit_transform(documents).toarray()  
 
  
@@ -67,41 +67,28 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
 #split Training and Testing Sets
  
 #Training Text Classification Model and Predicting Sentiment
-
-#classifier = RandomForestClassifier(n_estimators=1000, random_state=0)  
-#classifier.fit(X_train, y_train)  
-#y_pred = classifier.predict(X_test)  
-
 gnb = GaussianNB()
 gnb.fit(X_train, y_train)
 y_pred = gnb.predict(X_test)
 #Training Text Classification Model and Predicting Sentiment
- 
+
 #Evaluating the Model
-#print(confusion_matrix(y_test,y_pred))  
-#print(classification_report(y_test,y_pred))  
-print("the accuracy level is ",accuracy_score(y_test, y_pred))  
+print(accuracy_score(y_test, y_pred))  
 #Evaluating the Model
  
 #Saving and Loading the Model
-
 with open('text_classifier', 'wb') as picklefile:  
     pickle.dump(gnb,picklefile)
- 
 #Saving and Loading the Model
 
-#To load the model
+#To load the model and predict
 with open('text_classifier', 'rb') as training_model:  
     model = pickle.load(training_model)
+y_pred2 = model.predict(X_test)
+print(accuracy_score(y_test, y_pred2))
 #To load the model
 
-y_pred2 = model.predict(X_test)
-
-
-
-#print(confusion_matrix(y_test, y_pred2))  
-#print(classification_report(y_test, y_pred2))  
-print("the accuracy level after load ",accuracy_score(y_test, y_pred2))  
+  
 
 if __name__ == '__main__':
     pass
