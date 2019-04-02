@@ -146,4 +146,4 @@ print(&quot;the accuracy level after load &quot;,accuracy_score(y_test, y_pred2)
 <p>Once you execute the above script, you can see the&nbsp;<code>text_classifier</code>&nbsp;file in your working directory</p>
 
 
-
+<p><a href="https://github.com/sapnilcsecu/Nltk-sentiment-analysis/blob/master/Sentiemnt-train-model/train_model/TFIDF_nativebayes.py" target="_self"><strong>TFIDF_nativebayes</strong></a></p>
