@@ -125,6 +125,14 @@ Finally, to predict the sentiment for the documents in our test set we can use t
 <p>To evaluate the performance of a classification model such as the one that we just trained&nbsp;we can use accuracy score.for calculating accuracy score run the following script:&nbsp;</p>
 
 <p>print(accuracy_score(y_test, y_pred)) &nbsp;</p>
+<h2>Saving and Loading the Model</h2>
+
+<p>We can save our model as a&nbsp;<code>pickle</code>&nbsp;object in Python. To do so, execute the following script:</p>
+
+<p>with open(&#39;text_classifier&#39;, &#39;wb&#39;) as picklefile: &nbsp;<br />
+&nbsp; &nbsp; pickle.dump(gnb,picklefile)</p>
+
+<p>Once you execute the above script, you can see the&nbsp;<code>text_classifier</code>&nbsp;file in your working directory</p>
 
 
 
