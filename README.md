@@ -118,6 +118,17 @@ X = tfidfconverter.fit_transform(documents).toarray() &nbsp;</p>
 <p>gnb = GaussianNB()<br />
 gnb.fit(X_train, y_train)<br />
 Finally, to predict the sentiment for the documents in our test set we can use the&nbsp;<code>predict</code>&nbsp;method of the&nbsp;GaussianNB&nbsp;class as shown below:</p>
+<p>To load the model, we can use the following code:</p>
+
+<p>with open(&#39;text_classifier&#39;, &#39;rb&#39;) as training_model: &nbsp;<br />
+&nbsp; &nbsp; model = pickle.load(training_model)</p>
+
+<p>We loaded our trained model and stored it in the&nbsp;<code>model</code>&nbsp;variable. Let&#39;s predict the sentiment for the test set using our loaded model and see if we can get the same results. Execute the following script:</p>
+
+<p>with open(&#39;text_classifier&#39;, &#39;rb&#39;) as training_model: &nbsp;<br />
+&nbsp; &nbsp; model = pickle.load(training_model)<br />
+y_pred2 = model.predict(X_test)<br />
+print(&quot;the accuracy level after load &quot;,accuracy_score(y_test, y_pred2))</p>
 
 <p>y_pred = gnb.predict(X_test)</p>
 
