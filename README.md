@@ -147,3 +147,59 @@ print(&quot;the accuracy level after load &quot;,accuracy_score(y_test, y_pred2)
 
 
 <p><strong>complere source code you can get in this link&nbsp;<a href="https://github.com/sapnilcsecu/Nltk-sentiment-analysis/blob/master/Sentiemnt-train-model/train_model/TFIDF_nativebayes.py" target="_self">TFIDF_nativebayes</a></strong></p>
+
+<h1>Sentiment Analysis with Nltk nativebayes classification by using Bigrams</h1>
+
+<p>We will use Python&#39;s Nltk library for machine learning to train a text classification model.</p>
+
+<p>Following are the steps required to create a text classification model in Python:</p>
+
+<ol>
+	<li>Import the library</li>
+	<li>Importing The movie_reviews dataset&nbsp;</li>
+	<li>Training and Test Sets</li>
+	<li>Training Text Classification Model and Evaluating The Model</li>
+</ol>
+
+<h2>Importing Libraries</h2>
+
+<p>Execute the following script to import the required libraries:</p>
+
+<p>import nltk<br />
+from nltk.corpus import movie_reviews<br />
+from nltk.classify import NaiveBayesClassifier<br />
+import nltk.classify.util as util<br />
+from nltk.collocations import BigramCollocationFinder as BCF<br />
+from nltk.metrics import BigramAssocMeasures<br />
+import itertools</p>
+
+<h2>Importing The movie_reviews dataset&nbsp;</h2>
+
+<p>Execute the following script for importing movie_reviews dataset.</p>
+
+<p>&nbsp; &nbsp; pid = movie_reviews.fileids(&#39;neg&#39;)<br />
+&nbsp; &nbsp; nid = movie_reviews.fileids(&#39;pos&#39;)</p>
+
+<p>&nbsp;next code segment return bigram feature&nbsp;</p>
+
+<p>&nbsp; &nbsp; prev = [(features(movie_reviews.words(fileids = id)), &#39;positive&#39;) for id in pid]<br />
+&nbsp; &nbsp; nrev = [(features(movie_reviews.words(fileids = id)), &#39;negative&#39;) for id in nid]</p>
+
+<h2>Training and Testing Sets</h2>
+
+<p>&nbsp;following script return the training and testing set</p>
+
+<p>&nbsp; &nbsp; &nbsp;train_set = nrev[:ncutoff] + prev[:pcutoff]<br />
+&nbsp; &nbsp; &nbsp;test_set = nrev[ncutoff:] + prev[pcutoff:]</p>
+
+<h2>Training Text Classification Model and Evaluating The Model</h2>
+
+<p>&nbsp;following script train the&nbsp;Text Classification Model and Evaluating The Model</p>
+
+<p>&nbsp; &nbsp;classifier = NaiveBayesClassifier.train(train_set)</p>
+
+<p>&nbsp; &nbsp; # Accuracy<br />
+&nbsp; &nbsp; print (&quot;Accuracy is : &quot;, util.accuracy(classifier, test_set) * 100)</p>
+
+<p>&nbsp;</p>
+
