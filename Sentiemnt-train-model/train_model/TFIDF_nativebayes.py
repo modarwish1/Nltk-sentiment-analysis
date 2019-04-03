@@ -20,7 +20,7 @@ documents = []
 #nltk.download('stopwords')  
 
 
-movie_data = load_files(r"E:\chatbott\githubrepro\Sentiemnt-analysis\Nltk-sentiment-analysis\Nltk-sentiment-analysis\Sentiemnt-train-model\train_model\txt_sentoken")  
+movie_data = load_files(r"txt_sentoken")  
 #print("the len value is ", len(movie_data.data))
 X, y = movie_data.data, movie_data.target  
 
