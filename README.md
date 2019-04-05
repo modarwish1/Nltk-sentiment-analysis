@@ -203,3 +203,5 @@ import itertools</p>
 
 <p>&nbsp;</p>
 
+<p><strong>complere source code you can get in this link&nbsp;<a href="https://github.com/sapnilcsecu/Nltk-sentiment-analysis/blob/master/Sentiemnt-train-model/train_model/movie_review_using_bigram.py">movie_review_using_bigram</a></strong></p>
+
