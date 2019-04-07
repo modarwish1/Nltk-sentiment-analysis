@@ -216,4 +216,14 @@ import itertools</p>
 	<li>Training Text Classification Model and Evaluating The Model</li>
 </ol>
 
+load the positive and negative review and create the feature dictionary
+Execute the following script load the positive and negative review and create the feature then add to the feature dictionary
 
+ for fileid in movie_reviews.fileids('pos'):
+        words = movie_reviews.words(fileid)
+        pos_reviews.append((create_word_features(words), "positive"))
+
+
+   for fileid in movie_reviews.fileids('neg'):
+        words1 = movie_reviews.words(fileid)
+        neg_reviews.append((create_word_features(words1), "negative"))
