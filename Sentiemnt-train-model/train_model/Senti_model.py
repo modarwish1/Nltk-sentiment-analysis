@@ -22,26 +22,30 @@ def create_word_features(words):
 def main():
     neg_reviews = []
     pos_reviews = []
+    
+    #load the positive review
     for fileid in movie_reviews.fileids('pos'):
         words = movie_reviews.words(fileid)
         pos_reviews.append((create_word_features(words), "positive"))
-    
-    print(pos_reviews[0])    
-# print(len(pos_reviews))
-
+ 
+    #load the positive review
+    #load the negative review
     for fileid in movie_reviews.fileids('neg'):
         words1 = movie_reviews.words(fileid)
         neg_reviews.append((create_word_features(words1), "negative"))
-    
-# print(pos_reviews[0])    
-# print(len(pos_reviews))
-    
+    #load the negative review
+
+    #ready train_set and test_set
     train_set = neg_reviews[:750] + pos_reviews[:750]
     test_set = neg_reviews[750:] + pos_reviews[750:]
-    print(len(train_set), len(test_set))   
+    
+    #ready train_set and test_set
+     
+    #Training Text Classification Model and Evaluating The Model
     classifier = NaiveBayesClassifier.train(train_set)
     accuracy = nltk.classify.util.accuracy(classifier, test_set)
     print(accuracy * 100) 
+    #Training Text Classification Model and Evaluating The Model
 
 if __name__ == '__main__':
      main()
