@@ -205,3 +205,15 @@ import itertools</p>
 
 <p><strong>complere source code you can get in this link&nbsp;<a href="https://github.com/sapnilcsecu/Nltk-sentiment-analysis/blob/master/Sentiemnt-train-model/train_model/movie_review_using_bigram.py">movie_review_using_bigram</a></strong></p>
 
+<h2>Nltk nativebayes classification without Bigrams</h2>
+
+<p>Following are the steps required to create a text classification model without Bigrams in Python:</p>
+
+<ol>
+	<li>Import the library</li>
+	<li>load the positive and negative review and create the feature</li>
+	<li>Prepare train and test dataset</li>
+	<li>Training Text Classification Model and Evaluating The Model</li>
+</ol>
+
+
