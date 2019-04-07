@@ -17,8 +17,6 @@ def create_word_features(words):
     return my_dict
 
 
-
-
 def main():
     neg_reviews = []
     pos_reviews = []
@@ -49,3 +47,4 @@ def main():
 
 if __name__ == '__main__':
      main()
+
