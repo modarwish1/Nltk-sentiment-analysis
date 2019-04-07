@@ -216,14 +216,37 @@ import itertools</p>
 	<li>Training Text Classification Model and Evaluating The Model</li>
 </ol>
 
-load the positive and negative review and create the feature dictionary
-Execute the following script load the positive and negative review and create the feature then add to the feature dictionary
+<h1>Nltk nativebayes classification without Bigrams</h1>
 
- for fileid in movie_reviews.fileids('pos'):
-        words = movie_reviews.words(fileid)
-        pos_reviews.append((create_word_features(words), "positive"))
+<p>Following are the steps required to create a text classification model without Bigrams in Python:</p>
 
+<ol>
+	<li>Import the library</li>
+	<li>load the positive and negative review and create the feature</li>
+	<li>Prepare train and test dataset</li>
+	<li>Training Text Classification Model and Evaluating The Model</li>
+</ol>
 
-   for fileid in movie_reviews.fileids('neg'):
-        words1 = movie_reviews.words(fileid)
-        neg_reviews.append((create_word_features(words1), "negative"))
+<h2>Import the library</h2>
+
+<p>Execute the following script to import the required libraries:</p>
+
+<p>import nltk.classify.util<br />
+from nltk.classify import NaiveBayesClassifier<br />
+from nltk.corpus import movie_reviews<br />
+from nltk.corpus import stopwords<br />
+from nltk.tokenize import word_tokenize<br />
+import nltk</p>
+
+<h2>load the positive and negative review and create the feature dictionary</h2>
+
+<p>Execute the following script load the positive and negative review and create the feature then add to the feature dictionary</p>
+
+<p>&nbsp; &nbsp; &nbsp; for fileid in movie_reviews.fileids(&#39;pos&#39;):<br />
+&nbsp; &nbsp; &nbsp; &nbsp; words = movie_reviews.words(fileid)<br />
+&nbsp; &nbsp; &nbsp; &nbsp; pos_reviews.append((create_word_features(words), &quot;positive&quot;))<br />
+&nbsp;</p>
+
+<p>&nbsp; &nbsp; &nbsp; for fileid in movie_reviews.fileids(&#39;neg&#39;):<br />
+&nbsp; &nbsp; &nbsp; &nbsp; words1 = movie_reviews.words(fileid)<br />
+&nbsp; &nbsp; &nbsp; &nbsp; neg_reviews.append((create_word_features(words1), &quot;negative&quot;))</p>
