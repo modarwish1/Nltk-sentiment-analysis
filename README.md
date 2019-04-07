@@ -250,3 +250,18 @@ import nltk</p>
 <p>&nbsp; &nbsp; &nbsp; for fileid in movie_reviews.fileids(&#39;neg&#39;):<br />
 &nbsp; &nbsp; &nbsp; &nbsp; words1 = movie_reviews.words(fileid)<br />
 &nbsp; &nbsp; &nbsp; &nbsp; neg_reviews.append((create_word_features(words1), &quot;negative&quot;))</p>
+
+<h2>Prepare train and test dataset</h2>
+
+<p>Execute the following script for preparing&nbsp;train and test dataset</p>
+
+<p>&nbsp; &nbsp; train_set = neg_reviews[:750] + pos_reviews[:750]<br />
+&nbsp; &nbsp; test_set = neg_reviews[750:] + pos_reviews[750:]</p>
+
+<h2>Training Text Classification Model and Evaluating The Model</h2>
+
+<p>Execute the following script for&nbsp;Training Text Classification Model and Evaluating The Model</p>
+
+<p>&nbsp; &nbsp; classifier = NaiveBayesClassifier.train(train_set)<br />
+&nbsp; &nbsp; accuracy = nltk.classify.util.accuracy(classifier, test_set)<br />
+&nbsp; &nbsp; print(accuracy * 100)&nbsp;</p>
