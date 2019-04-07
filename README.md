@@ -265,3 +265,5 @@ import nltk</p>
 <p>&nbsp; &nbsp; classifier = NaiveBayesClassifier.train(train_set)<br />
 &nbsp; &nbsp; accuracy = nltk.classify.util.accuracy(classifier, test_set)<br />
 &nbsp; &nbsp; print(accuracy * 100)&nbsp;</p>
+<p>complere source code you can get in this link <a href="https://github.com/sapnilcsecu/Nltk-sentiment-analysis/blob/master/Sentiemnt-train-model/train_model/Senti_model.py">Senti_model</a></p>
+
