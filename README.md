@@ -146,8 +146,7 @@ print(&quot;the accuracy level after load &quot;,accuracy_score(y_test, y_pred2)
 <p>Once you execute the above script, you can see the&nbsp;<code>text_classifier</code>&nbsp;file in your working directory</p>
 
 
-<p><strong>complere source code you can get in this link&nbsp;<a href="https://github.com/sapnilcsecu/Nltk-sentiment-analysis/blob/master/Sentiemnt-train-model/train_model/TFIDF_nativebayes.py" target="_self">TFIDF_nativebayes</a></strong></p>
-
+<p><strong>complere source code you can get in this link&nbsp;<a href="https://github.com/sapnilcsecu/Nltk-sentiment-analysis/blob/master/Sentiemnt-train-model/train_model/RandomForestClassifier.py">RandomForestClassifier.py</a></strong></p>
 <h1>Sentiment Analysis with Nltk nativebayes classification by using Bigrams</h1>
 
 <p>We will use Python&#39;s Nltk library for machine learning to train a text classification model.</p>
