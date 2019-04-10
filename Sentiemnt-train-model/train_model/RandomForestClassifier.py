@@ -67,9 +67,11 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
 #split Training and Testing Sets
  
 #Training Text Classification Model and Predicting Sentiment
-gnb = GaussianNB()
-gnb.fit(X_train, y_train)
-y_pred = gnb.predict(X_test)
+##gnb = GaussianNB()
+##gnb.fit(X_train, y_train)
+classifier = RandomForestClassifier(n_estimators=1000, random_state=0)  
+classifier.fit(X_train, y_train)  
+y_pred = classifier.predict(X_test)
 #Training Text Classification Model and Predicting Sentiment
 
 #Evaluating the Model
@@ -78,7 +80,7 @@ print(accuracy_score(y_test, y_pred))
  
 #Saving and Loading the Model
 with open('text_classifier', 'wb') as picklefile:  
-    pickle.dump(gnb,picklefile)
+    pickle.dump(classifier,picklefile)
 #Saving and Loading the Model
 
 #To load the model and predict
